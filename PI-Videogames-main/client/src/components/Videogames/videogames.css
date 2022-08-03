@@ -1,0 +1,47 @@
+.games-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.notfound {
+    width: 400px;
+    background-color: #cac3ca;
+}
+
+.search {
+    width: 300px;
+    
+}
+.nf{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size:x-large;
+    font-weight: 600;
+    color: #f8f1f1;
+    text-shadow: #0a0a0a 0px 0px 10px;
+    box-shadow: 3px 3px 3px 3px #cac3ca;
+    font-family: 'Minecraft', sans-serif;
+}
+.load{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size:x-large;
+    font-weight: 600;
+    color: #f8f1f1;
+    text-shadow: #0a0a0a 0px 0px 10px;
+    box-shadow: 3px 3px 3px 3px #cac3ca;
+    font-family: 'Minecraft', sans-serif;
+}
+.cont-nf{
+    box-sizing: border-box;
+   
+}
+.cont-ld{
+    box-sizing: border-box;
+    
+   
+}

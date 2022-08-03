@@ -1,0 +1,86 @@
+.details-div {  
+    display: flex;
+    justify-content: center;
+    border: 5px solid rgb(12, 12, 12);
+    z-index: 1;
+    margin: 10px;
+    background-color: rgba(105, 102, 104, 0.623);
+}
+
+.detail-contenedor-div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.details-div p {
+    display: flex;
+    justify-content: center;
+    color: rgb(238, 234, 234);
+    font-size: larger;
+    font-weight: 500;
+}
+
+.div-img {
+    display: flex;
+    justify-content: center;
+}
+
+.details-div img{
+    border: 5px solid rgb(12, 12, 12);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 10px;
+    width: 400px;
+    height: 200px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    font-size:xx-large;
+    color: rgb(245, 237, 237);
+}
+
+.div-descr {
+    margin: 20px;
+    justify-content: center;
+}
+
+.div-descr p {
+    display: flex;
+    justify-content: center;
+}
+
+.descripcion {
+    text-align: justify;
+    
+}
+
+.div-descr button {
+    font-family: 'Minecraft', sans-serif;
+    text-shadow: #0c0c0c 0px 0px 10px;
+    letter-spacing: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    color: whitesmoke;
+    font-weight: 400;
+    font-size: 20px;
+    background-color: gainsboro;
+    padding: 15px 40px;
+    border-radius: 10px;
+    border: 3px solid #0c0c0c;
+}
+
+.div-descr button:hover {
+    background-color: black;
+    color: rgb(250, 246, 249);
+    border: 3px solid rgb(240, 236, 236);
+}

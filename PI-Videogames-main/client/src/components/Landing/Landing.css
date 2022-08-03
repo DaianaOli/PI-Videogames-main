@@ -1,0 +1,38 @@
+.title{
+  font-family: 'Minecraft PE', sans-serif;
+  background-color: black;
+  border-radius: 15px;
+}
+.myButton{
+  display: flex;
+  position: absolute;
+  left:40%;
+  top:20%;
+  width: 250px;
+  height: 80px;
+  border-radius: 10px;   
+}
+
+.myButton {
+  font-family: 'Minecraft PE', sans-serif;
+  text-align: center;
+	display: inline-block;
+	margin:5px;
+  font-weight: bold;
+  padding: 10px 0 10px 10px ;    background-color: lightgray;
+  text-shadow: -1px -1px black, 1px 1px white;
+  color: rgb(12, 12, 12);
+	border-radius: 7px;
+  cursor: pointer;
+  font-size: 50px;
+}
+
+.img{
+  position: absolute;
+  top:45%;
+}
+.myButton:hover{
+  background-color: rgb(12, 12, 12);
+  color: white;
+  text-shadow: -1px -1px black, 1px 1px white;
+}
