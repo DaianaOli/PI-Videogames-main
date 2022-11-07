@@ -59,6 +59,11 @@
 
 .descripcion {
     text-align: justify;
+    border: #0c0c0c 5px solid;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgba(31, 29, 30, 0.623);
+
     
 }
 
@@ -83,4 +88,30 @@
     background-color: black;
     color: rgb(250, 246, 249);
     border: 3px solid rgb(240, 236, 236);
+}
+.rd{
+    border: #0c0c0c;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgba(190, 170, 180, 0.623);
+}
+
+.rating{
+    border: #0c0c0c 5px solid;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgba(211, 209, 85, 0.623);
+}
+.genres{
+    border: #0c0c0c 5px solid;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgba(31, 29, 30, 0.623);
+}
+
+.platforms{
+    border: #0c0c0c 5px solid;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgba(95, 89, 92, 0.623);
 }

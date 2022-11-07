@@ -6,16 +6,19 @@ import Navbar from '../NavBar/NavBar'
 import photo from '../imagenes/images.jpg'
 import { NavLink } from 'react-router-dom'
 import './gamedetail.css'
+import{ useDispatch} from 'react-redux'
 
 
 function GameDetails(props) {
 
   const {getVideogameDetail, gameDetails} = props
   const {idVideogame} = props.match.params;
+  const dispatch = useDispatch()
   // me carga los details del juego
     useEffect(() => {
     getVideogameDetail(idVideogame);
-    },[getVideogameDetail, idVideogame])
+    dispatch({type: 'GET_VIDEOGAME_DETAIL', payload: []})
+    },[getVideogameDetail, dispatch])
 
   return (
     <div>
@@ -33,16 +36,6 @@ function GameDetails(props) {
                 <img src={photo} alt="Videogame"></img>
               </div>
             )}
-            
-            {
-              <p>
-                <strong>Release Date</strong>:{" "}
-                {`${gameDetails.releaseDate || "None"}`}
-              </p>
-            }
-            <p>
-              <strong>Rating</strong>:  {`${gameDetails.rating}`}
-            </p>
             {gameDetails.description &&
             gameDetails.genres &&
             gameDetails.platforms ? (
@@ -50,17 +43,18 @@ function GameDetails(props) {
                 {
                   <p className="descripcion">
                   <strong>Description</strong>: 
-                    {gameDetails.description.replace(/(<([^>]+)>)/gi, "")}
+                      <p>{gameDetails.description.replace(/(<([^>]+)>)/gi, "")}
+                      </p>
                   </p>
                 }
                 {
-                  <p>
-                    <strong>Genres</strong>:
+                  <p className='genres'>
+                    <strong>Genres</strong>: 
                     {`${gameDetails.genres.join(", ")}`}
                   </p>
                 }
                 {
-                  <p>
+                  <p className='platforms'>
                     <strong>Platforms</strong>:{" "}
                     {`${
                       typeof gameDetails.platforms === "string"
@@ -69,6 +63,15 @@ function GameDetails(props) {
                     }`}
                   </p>
                 }
+                {
+              <p className='rd'>
+                <strong>Release Date</strong>:{" "}
+                {`${gameDetails.releaseDate || "None"}`}
+              </p>
+            }
+            <p className='rating'>
+              <strong>Rating</strong>:  {`${gameDetails.rating}`}
+            </p>
                 
                 <NavLink to="/videogames">
                   <button>Back</button>

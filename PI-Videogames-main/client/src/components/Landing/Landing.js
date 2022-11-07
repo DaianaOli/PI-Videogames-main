@@ -5,15 +5,15 @@ import img from '../imagenes/nS1.gif'
 export default function Landing() {
 
   return (
-    <div>
+    <div className='content'>
     <h1 className='
     title'>Let's get started!</h1>
-        <Link to="/videogames">
-          <button className="myButton">HOME</button>
-        </Link>
         <div className='img'>
           <img src={img} alt="logo" />
         </div>
+        <Link to="/videogames">
+          <button className="myButton">HOME</button>
+        </Link>
     </div>
     
   );
