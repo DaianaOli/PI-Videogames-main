@@ -22,7 +22,7 @@ const { conn } = require('./src/db.js');
 const axios = require('axios');
 const dot = require('dotenv');
 dot.config();
-axios.defaults.baseURL = 'http://localhost:3001';
+axios.default.baseURL = 'http://localhost:3001';
 var local='';
 if (process.env.PORT == 3001){
   local='http://localhost:3001';
