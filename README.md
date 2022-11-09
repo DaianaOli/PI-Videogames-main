@@ -1,7 +1,7 @@
 # PI-Videogames-main
 
 <p>
-Septiembre 12. - Octubre 3  
+Junio 2022 - Julio 2022 
 Henry Bootcamp, Buenos Aires, Argentina.  
 </p>
 </strong>
