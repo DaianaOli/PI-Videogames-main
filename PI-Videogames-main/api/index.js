@@ -24,8 +24,8 @@ const dot = require('dotenv');
 dot.config();
 axios.default.baseURL = 'http://localhost:3001';
 var local='';
-if (process.env.PORT == 3001){
-  local='http://localhost:3001';
+if (process.env.PORT == "0.0.0.0"){
+  local='http://localhost:0.0.0.0';
 }else {
   local= "https://pi-henry-videogames.herokuapp.com";
 }
