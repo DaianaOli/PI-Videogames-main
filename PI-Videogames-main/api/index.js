@@ -27,7 +27,7 @@ var local='';
 if (process.env.PORT == 3001){
   local='http://localhost:3001';
 }else {
-  local= "https://pi-henry-videogames.herokuapp.com";
+  local= "https://pi-videogames-main-production-45d2.up.railway.app/";
 }
 // Syncing all the models at once.
 console.log(process.env.PORT, local);
