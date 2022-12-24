@@ -24,15 +24,10 @@ const dot = require('dotenv');
 dot.config();
 axios.default.baseURL = 'http://localhost:3001';
 var local='';
-if (process.env.PORT == "0.0.0.0"){
-  local='http://localhost:0.0.0.0';
-}else {
-  local= "https://pi-henry-videogames.herokuapp.com";
-}
 // Syncing all the models at once.
-console.log(process.env.PORT, local);
 conn.sync({ force: true }).then(() => {
-  server.listen(process.env.PORT, () => {
-    console.log('\x1b[33m%s\x1b[0m', 'server listening at 3001'); // eslint-disable-line no-console
+  server.listen(3001, () => {
+    console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
-});
+}
+);
