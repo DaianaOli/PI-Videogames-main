@@ -8,7 +8,7 @@ import store from './store/index';
 import dotenv from 'dotenv';
 import axios from 'axios';
 dotenv.config()
-axios.defaults.baseURL = process.env.PORT || 'http://localhost:3001';
+axios.defaults.baseURL = process.env.PORT || 'http://localhost:3001'; 
 
 ReactDOM.render(
   <React.StrictMode>
