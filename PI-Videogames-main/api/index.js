@@ -26,16 +26,16 @@ dot.config();
 
 axios.default.baseURL = 'http://localhost:3001';
 var local='';
-if (process.env.PORT == 3001){
+if (PORT == 3001){
   local='http://localhost:3001';
 }else {
-  local= "https://pi-henry-videogames.herokuapp.com";
+  local= "pi-videogames-main-production-2d85.up.railway.app";
 }
 
 // Syncing all the models at once.
-console.log(process.env.PORT, local);
+console.log(PORT, local);
 conn.sync({ force: true }).then(() => {
-  server.listen(process.env.PORT, () => {
+  server.listen(PORT, () => {
     console.log('\x1b[33m%s\x1b[0m', 'server listening at 3001'); // eslint-disable-line no-console
   });
 });
