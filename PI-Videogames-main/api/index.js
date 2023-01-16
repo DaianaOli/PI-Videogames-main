@@ -22,7 +22,7 @@ const { conn } = require('./src/db.js');
 const PORT = process.env.PORT;
 
 conn.sync({ force: false }).then(() => {
-  server.listen(`0.0.0.0:${PORT}`, () => {
+  server.listen(PORT, () => {
     console.log(`Server listening at ${PORT}`);
   });
 });
