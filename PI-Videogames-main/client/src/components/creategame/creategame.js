@@ -84,7 +84,7 @@ function CreateGame(props) {
         if (Object.values(errors).length || checkboxsErrors.length) { // Object.values --> retorno un array con los values
             return alert(Object.values(errors).concat(checkboxsErrors).join('\n'));
         }
-        axios.post('http://localhost:3001/videogame', form)
+        axios.post('/videogame', form)
                   .then(res => console.log(res.data));
         alert(`${form.name} Creado Correctamente`)
         props.history.push('/videogames') 
