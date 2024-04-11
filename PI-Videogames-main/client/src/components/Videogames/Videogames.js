@@ -51,7 +51,7 @@ function Videogames({allGames, getAllGames, getGenres }) {
         />
         <div className="games-div">
           {currentCards.length > 1 ? (
-            currentCards.map((g) => (
+            currentCards?.map((g) => (
               <Videogame
                 key={g.id}
                 name={g.name}
