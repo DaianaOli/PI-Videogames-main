@@ -6,34 +6,13 @@ const {
   POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_HOST, POSTGRES_URL, POSTGRES_DATABASE,POSTGRES_PORT,
 } = process.env;
 
-let sequelize =
-  process.env.NODE_ENV === "production"
-    ? new Sequelize({
-      database: POSTGRES_DATABASE,
-      username: POSTGRES_USER,
-      password: POSTGRES_PASSWORD,
-      host: POSTGRES_HOST,
-      port: POSTGRES_PORT,
-      dialect: "postgres",
-        pool: {
-          max: 3,
-          min: 1,
-          idle: 10000,
-        },
-        dialectOptions: {
-          ssl: {
-            require: true,
-            // Ref.: https://github.com/brianc/node-postgres/issues/2009
-            rejectUnauthorized: false,
-          },
-          keepAlive: true,
-        },
-        ssl: true,
-      })
-    : new Sequelize(
-        `${POSTGRES_URL}`,
-        { logging: false, native: false }
-      );
+import pg from 'pg';
+
+const { Pool } = pg;
+
+const pool = new Pool({
+  connectionString: process.env.POSTGRES_URL ,
+})
 
 const basename = path.basename(__filename);
 
