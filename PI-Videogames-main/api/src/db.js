@@ -10,7 +10,7 @@ import pg from 'pg';
 
 const { Pool } = pg;
 
-const pool = new Pool({
+const sequelize = new Pool({
   connectionString: process.env.POSTGRES_URL ,
 })
 
