@@ -3,16 +3,37 @@ const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const {
-  POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_HOST, POSTGRES_URL, POSTGRES_DATABASE,POSTGRES_PORT,
+  PGUSER, PGPASSWORD, PGHOST, PGPORT, PGDATABASE,
 } = process.env;
 
-import pg from 'pg';
-
-const { Pool } = pg;
-
-const sequelize = new Pool({
-  connectionString: process.env.POSTGRES_URL ,
-})
+let sequelize =
+  process.env.NODE_ENV === "production"
+    ? new Sequelize({
+      database: PGDATABASE,
+      username: PGUSER,
+      password: PGPASSWORD,
+      host: PGHOST,
+      port: PGPORT,
+      dialect: "postgres",
+        pool: {
+          max: 3,
+          min: 1,
+          idle: 10000,
+        },
+        dialectOptions: {
+          ssl: {
+            require: true,
+            // Ref.: https://github.com/brianc/node-postgres/issues/2009
+            rejectUnauthorized: false,
+          },
+          keepAlive: true,
+        },
+        ssl: true,
+      })
+    : new Sequelize(
+        `postgres://${PGUSER}:${PGPASSWORD}@${PGHOST}/videogames`,
+        { logging: false, native: false }
+      );
 
 const basename = path.basename(__filename);
 
