@@ -8,7 +8,11 @@ const {
 
 let sequelize =
   process.env.NODE_ENV === "production"
-    ? new Sequelize({
+    ?  new Sequelize(
+      `${POSTGRES_URL}`,
+      { logging: false, native: false }
+    )
+    : new Sequelize({
       database: POSTGRES_DATABASE,
       username: POSTGRES_USER,
       password: POSTGRES_PASSWORD,
@@ -30,10 +34,7 @@ let sequelize =
         },
         ssl: true,
       })
-    : new Sequelize(
-        `${POSTGRES_URL}`,
-        { logging: false, native: false }
-      );
+    
 
 const basename = path.basename(__filename);
 
