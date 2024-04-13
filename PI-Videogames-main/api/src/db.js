@@ -3,7 +3,7 @@ const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const {
-  POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_HOST, POSTGRES_PORT, POSTGRES_DATABASE,
+  POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_HOST, POSTGRES_PORT, POSTGRES_DATABASE,POSTGRES_URL
 } = process.env;
 
 let sequelize =
@@ -31,7 +31,7 @@ let sequelize =
         ssl: true,
       })
     : new Sequelize(
-        `postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}/@${POSTGRES_DATABASE}`,
+        `${POSTGRES_URL}`,
         { logging: false, native: false }
       );
 
