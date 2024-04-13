@@ -31,7 +31,7 @@ let sequelize =
         ssl: true,
       })
     : new Sequelize(
-        `postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}/@${POSTGRES_PORT}/@${POSTGRES_DATABASE}?sslmode=require`,
+        `postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}/${POSTGRES_PORT}/${POSTGRES_DATABASE}?sslmode=require`,
         { logging: false, native: false }
       );
 
