@@ -20,6 +20,7 @@
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 const PORT = process.env.POSTGRES_PORT;
+// PORT = process.env.PORT
 
 conn.sync({ force: false }).then(() => {
   server.listen(PORT, () => {
