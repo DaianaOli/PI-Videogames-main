@@ -3,17 +3,17 @@ const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const {
-  POSTGRESQL_DB_USER, POSTGRESQL_DB_PASSWORD, POSTGRESQL_DB_HOST, PGPORT, POSTGRESQL_DB,
+  POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_HOST, POSTGRES_PORT, POSTGRES_DATABASE,
 } = process.env;
 
 let sequelize =
   process.env.NODE_ENV === "production"
     ? new Sequelize({
-      database: POSTGRESQL_DB,
-      username: POSTGRESQL_DB_USER,
-      password: POSTGRESQL_DB_PASSWORD,
-      host: POSTGRESQL_DB_HOST,
-      port: PGPORT,
+      database: POSTGRES_DATABASE,
+      username: POSTGRES_USER,
+      password: POSTGRES_PASSWORD,
+      host: POSTGRES_HOST,
+      port: POSTGRES_PORT,
       dialect: "postgres",
         pool: {
           max: 3,
@@ -31,7 +31,7 @@ let sequelize =
         ssl: true,
       })
     : new Sequelize(
-        `postgres://${POSTGRESQL_DB_USER}:${POSTGRESQL_DB_PASSWORD}@${POSTGRESQL_DB_HOST}/videogames`,
+        `postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}/@${POSTGRES_DATABASE}`,
         { logging: false, native: false }
       );
 
