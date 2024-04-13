@@ -19,11 +19,11 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
-const PORT = process.env.POSTGRES_PORT || 3000;
+const PORT = process.env.POSTGRES_PORT || 5432;
 // PORT = process.env.PORT
 
 conn.sync({ force: false }).then(() => {
   server.listen(PORT, () => {
-    console.log(`Server listening at ${PORT}`);
+    console.log(`Server listening at ${PORT}...`);
   });
 });
