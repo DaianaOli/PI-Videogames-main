@@ -1,6 +1,6 @@
 {   "version": 2,
     "functions": {
-      "/*.js":{
+      "api/**.js":{
         "memory": 1024 
       }
     },
