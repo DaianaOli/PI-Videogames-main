@@ -1,7 +1,7 @@
 require('dotenv').config();
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
-const PORT = 3000;
+const PORT = process.env.POSTGRES_PORT || 3000;
 
 
 conn.sync({ force: false }).then(() => {
