@@ -1,6 +1,6 @@
 {   "version": 2,
     "functions": {
-      "src/*.js":{
+      "/*.js":{
         "memory": 1024 
       }
     },
